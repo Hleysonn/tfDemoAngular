@@ -1,0 +1,10 @@
+<!-- <div *ngIf="show" [ngClass]="color">
+    {{ message }}
+</div> -->
+
+@if(show) {
+    <div [ngClass]="color">
+        {{ message }}
+        <span (click)="hide()">&times;</span>
+    </div>
+}

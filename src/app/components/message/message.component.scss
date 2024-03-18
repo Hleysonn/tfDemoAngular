@@ -1,0 +1,35 @@
+div {
+    padding: 25px;
+    border-radius: 5px;
+    border-left-width: 4px;
+    border-left-style: solid;
+    position: relative;
+    span {
+        font-size: 25px;
+        position: absolute;
+        font-weight: bold;
+        right: 10px;
+        top: 10px;
+        cursor: pointer;
+    }
+}
+
+.success {
+    background-color: rgb(215, 246, 215);
+    color: green;
+}
+
+.info {
+    background-color: rgb(172, 229, 229);
+    color: blue;
+}
+
+.danger {
+    background-color: rgb(229, 179, 172);
+    color: red;
+}
+
+.warning {
+    background-color: rgb(191, 193, 81);
+    color: yellow;
+}
