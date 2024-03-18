@@ -1,4 +1,5 @@
-<p>My Paragraphe</p>
+<div>My Paragraphe</div>
+
 <div>
   <!-- <app-card *ngFor="let item of produits" [model]="item"></app-card> -->
   @for (item of produits; track item.titre) {
@@ -6,4 +7,8 @@
   } @empty {
     <p>La liste est vide</p>
   }
+</div>
+
+<div>
+
 </div>
