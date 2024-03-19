@@ -10,6 +10,7 @@ import { FooterComponent } from './layout/footer/footer.component';
 import { MenuComponent } from './layout/menu/menu.component';
 import { Demo1Component } from './pages/demo1/demo1.component';
 import { Demo2Component } from './pages/demo2/demo2.component';
+import { Page404Component } from './pages/404/404.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { Demo2Component } from './pages/demo2/demo2.component';
     MenuComponent,
     Demo1Component,
     Demo2Component,
+    Page404Component,
   ],
   imports: [
     BrowserModule,
