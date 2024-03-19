@@ -1,1 +1,5 @@
-<p>demo1 works!</p>
+@for (item of produits; track item.titre) {
+    <app-card [model]="item"></app-card>
+} @empty {
+    <p>La liste est vide</p>
+}

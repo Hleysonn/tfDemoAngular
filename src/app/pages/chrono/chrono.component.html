@@ -1,0 +1,23 @@
+<div>
+    {{ timeEllapse }}
+</div>
+
+<div>
+    <p-button class="mx-4"
+              label="Start"
+              icon="pi pi-play"
+              severity="info"
+              (onClick)="start()"
+              [disabled]="intervalId"></p-button>
+    <p-button class="mx-4"
+              label="Stop"
+              icon="pi pi-stop"
+              severity="danger"
+              (onClick)="stop()"
+              [disabled]="!intervalId"></p-button>
+    <p-button class="mx-4"
+              label="Reset"
+              icon="pi pi-refresh"
+              severity="warning"
+              (onClick)="reset()"></p-button>
+</div>

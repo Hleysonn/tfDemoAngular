@@ -12,6 +12,8 @@ import { Demo1Component } from './pages/demo1/demo1.component';
 import { Demo2Component } from './pages/demo2/demo2.component';
 import { Page404Component } from './pages/404/404.component';
 import { MenuLinkComponent } from './components/menu-link/menu-link.component';
+import { ChronoComponent } from './pages/chrono/chrono.component';
+import { ButtonModule } from 'primeng/button';
 
 @NgModule({
   declarations: [
@@ -25,10 +27,12 @@ import { MenuLinkComponent } from './components/menu-link/menu-link.component';
     Demo2Component,
     Page404Component,
     MenuLinkComponent,
+    ChronoComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ButtonModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
