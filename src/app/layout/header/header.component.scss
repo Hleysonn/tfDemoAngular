@@ -4,6 +4,8 @@ header {
     box-shadow: 0 5px 10px 10px lightgray;
     height: 70px;
     align-items: center;
+    background-color: rgb(20, 78, 155);
+    color: white;
     > div {
         flex: 1;
         &:nth-child(2) {
