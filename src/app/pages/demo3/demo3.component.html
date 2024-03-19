@@ -1,0 +1,23 @@
+<h1>String</h1>
+<p>Affichage sans formatage: {{ nom }}</p>
+<p>Affichage en majuscule: {{ nom | uppercase }}</p>
+<p>Affichage en minuscule: {{ nom | lowercase }}</p>
+<p>Affichage en titre: {{ nom | titlecase }}</p>
+
+<h1>Number</h1>
+<p>Affichage sans formatage: {{ prix }}</p>
+<!-- x.y-z -->
+<p>Affichage formaté : {{ prix | number : '1.2-2' }}</p>
+<p>Affichage monnaie : {{ prix | currency : 'EUR' : 'symbol' }}</p>
+
+<h1>Date</h1>
+<p>Affichage sans formatage: {{ dateNaissance }}</p>
+<p>Affichage formaté: {{ dateNaissance | date : 'dd/MM/yyyy' }}</p>
+
+<h1>Boolean</h1>
+<p>Affichage sans formatage: {{ estMajeur }}</p>
+<p>Affichage ternaire: {{ estMajeur ? 'Je suis vieux' : 'Je suis jeune' }}</p>
+
+<h1>Pipe Custom</h1>
+<p>Affichage en Celcius: {{ temperatureDeLaClasse | kelvinTo : 'C' }}</p>
+<p>Affichage en Farenheit: {{ temperatureDeLaClasse | kelvinTo : 'F' }}</p>

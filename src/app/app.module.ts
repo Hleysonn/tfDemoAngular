@@ -14,6 +14,8 @@ import { Page404Component } from './pages/404/404.component';
 import { MenuLinkComponent } from './components/menu-link/menu-link.component';
 import { ChronoComponent } from './pages/chrono/chrono.component';
 import { ButtonModule } from 'primeng/button';
+import { Demo3Component } from './pages/demo3/demo3.component';
+import { KelvinToPipe } from './pipes/kelvin-to.pipe';
 
 @NgModule({
   declarations: [
@@ -28,6 +30,8 @@ import { ButtonModule } from 'primeng/button';
     Page404Component,
     MenuLinkComponent,
     ChronoComponent,
+    Demo3Component,
+    KelvinToPipe,
   ],
   imports: [
     BrowserModule,
