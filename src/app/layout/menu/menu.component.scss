@@ -4,4 +4,9 @@
     min-height: calc(100vh - 70px);
     background-color: #333333;
     color: white;
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
 }
