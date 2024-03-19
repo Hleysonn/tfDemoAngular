@@ -1,9 +1,14 @@
-div {
-    margin: 20px 100px;
+:host {
+    min-height: 100vh;
     display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-    > * {
-        width: 250px;
+    flex-direction: column;
+    .flex-horizontal {
+        display: flex;
+        flex-direction: row;
+    }
+    .flex-vertical {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
     }
 }

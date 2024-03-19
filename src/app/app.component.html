@@ -1,16 +1,8 @@
-<div>My Paragraphe</div>
-
-<div>
-  <!-- <app-card *ngFor="let item of produits" [model]="item"></app-card> -->
-  @for (item of produits; track item.titre) {
-    <app-card [model]="item"></app-card>
-  } @empty {
-    <p>La liste est vide</p>
-  }
-</div>
-<div>
-  <app-message message="Some information"></app-message>
-  <app-message color="success" message="Some success message"></app-message>
-  <app-message color="danger" message="ATTENTION !!!"></app-message>
-  <app-message color="warning" message="!!"></app-message>
+<app-header></app-header>
+<div class="flex-horizontal">
+  <app-menu></app-menu>
+  <div class="flex-vertical">
+    <router-outlet></router-outlet>
+    <app-footer></app-footer>
+  </div>
 </div>
