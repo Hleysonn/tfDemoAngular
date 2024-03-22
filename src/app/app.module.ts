@@ -3,42 +3,26 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CardComponent } from './components/card/card.component';
-import { MessageComponent } from './components/message/message.component';
 import { HeaderComponent } from './layout/header/header.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import { MenuComponent } from './layout/menu/menu.component';
-import { Demo1Component } from './pages/demo1/demo1.component';
-import { Demo2Component } from './pages/demo2/demo2.component';
 import { Page404Component } from './pages/404/404.component';
-import { MenuLinkComponent } from './components/menu-link/menu-link.component';
-import { ChronoComponent } from './pages/chrono/chrono.component';
-import { ButtonModule } from 'primeng/button';
-import { Demo3Component } from './pages/demo3/demo3.component';
-import { KelvinToPipe } from './pipes/kelvin-to.pipe';
-import { TimerPipe } from './pipes/timer.pipe';
+import { SharedModule } from './shared/shared.module';
+import { HomeComponent } from './pages/home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CardComponent,
-    MessageComponent,
     HeaderComponent,
     FooterComponent,
     MenuComponent,
-    Demo1Component,
-    Demo2Component,
+    HomeComponent,
     Page404Component,
-    MenuLinkComponent,
-    ChronoComponent,
-    Demo3Component,
-    KelvinToPipe,
-    TimerPipe,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ButtonModule,
+    SharedModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

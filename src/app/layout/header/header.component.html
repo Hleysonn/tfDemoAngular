@@ -1,5 +1,8 @@
 <header>
-    <div><i class="pi pi-bars"></i></div>
+    <div><i (click)="toggle()" class="pi" [ngClass]="{
+        'pi-bars': !menuOpen,
+        'pi-times': menuOpen
+    }"></i></div>
     <div>Demo Angular</div>
     <div><i class="pi pi-power-off"></i></div>
 </header>

@@ -1,17 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { Demo1Component } from './pages/demo1/demo1.component';
-import { Demo2Component } from './pages/demo2/demo2.component';
 import { Page404Component } from './pages/404/404.component';
-import { ChronoComponent } from './pages/chrono/chrono.component';
-import { Demo3Component } from './pages/demo3/demo3.component';
+import { HomeComponent } from './pages/home/home.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'demo1', pathMatch: 'full' },
-  { path: 'demo1', component: Demo1Component },
-  { path: 'demo2', component: Demo2Component },
-  { path: 'demo3', component: Demo3Component },
-  { path: 'chrono', component: ChronoComponent },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'home', component: HomeComponent },
+  { path: 'demo', loadChildren: () => import('./features/demos/demos.module').then(m => m.DemosModule) },
+  { path: 'exos', loadChildren: () => import('./features/exercices/exercices.module').then(m => m.ExercicesModule) },
   { path: '**', component: Page404Component },
 ];
 

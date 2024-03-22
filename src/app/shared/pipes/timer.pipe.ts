@@ -12,7 +12,10 @@ export class TimerPipe implements PipeTransform {
     let m = Math.floor(value / 60000) % 60;
     let h = Math.floor(value / 3600000);
 
-    return `${h.toString().padStart(2, '0')}:${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}:${ms.toString().padStart(3, '0')}`;
+    return `${this.pad0(h)}:${this.pad0(m)}:${this.pad0(s)}:${this.pad0(ms, 3)}`;
   }
 
+  private pad0(value: number, size: number = 2) {
+    return value.toString().padStart(size, '0');
+  }
 }

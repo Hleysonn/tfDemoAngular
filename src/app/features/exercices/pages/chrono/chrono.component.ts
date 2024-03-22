@@ -35,5 +35,4 @@ export class ChronoComponent implements OnDestroy {
   ngOnDestroy(): void {
     clearInterval(this.intervalId);
   }
-  
 }

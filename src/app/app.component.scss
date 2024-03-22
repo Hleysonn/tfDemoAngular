@@ -5,6 +5,16 @@
     .flex-horizontal {
         display: flex;
         flex-direction: row;
+        &:not(.menuOpen) {
+            :first-child {
+                margin-left: -300px;
+                overflow: hidden;
+            }
+        }
+        :first-child {
+            margin-left: 0;
+            transition: all 0.5s;
+        }
     }
     .flex-vertical {
         display: flex;
