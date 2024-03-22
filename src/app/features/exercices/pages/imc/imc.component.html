@@ -1,0 +1,41 @@
+<p-card>
+    <div class="pb-5">
+        <p-floatLabel>
+            <p-inputNumber [(ngModel)]="taille"></p-inputNumber>
+            <label>Taille (cm)</label>
+        </p-floatLabel>
+    </div>
+    <div class="pb-5">
+        <p-floatLabel>
+            <p-inputNumber [(ngModel)]="poids"></p-inputNumber>
+            <label>Poids (kg)</label>
+        </p-floatLabel>
+    </div>
+    <div>
+        <p-button label="Calculer" 
+                  severity="info"
+                  (onClick)="calculer()"
+                  class="mr-5"></p-button>
+        <p-button label="Reset"
+                  severity="secondary"
+                  icon="pi pi-refresh"
+                  (onClick)="reset()"></p-button>
+    </div>
+</p-card>
+
+@if(imc) {
+    <div class="mt-5">
+        <p-card>
+            <p>Votre IMC : {{ imc|number:'0.1-1' }}</p>
+
+            @if (imc < 18.5) {
+                <p>Vous êtes trop maigre</p>
+            } @else if(imc < 25) {
+                <p>Vous avez une corpulence normale</p>
+            } @else {
+                <p>Vous êtes trop gros</p>
+            }
+
+        </p-card>
+    </div>
+}

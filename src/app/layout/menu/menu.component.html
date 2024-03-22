@@ -1,24 +1,10 @@
 <nav>
     <ul>
-        <app-menu-link 
-            nom="Demo 1" 
-            link="/demo/demo1" 
-            icon="pi pi-home"></app-menu-link>
-        <app-menu-link
-            nom="Demo 2"
-            link="/demo/demo2"
-            icon="pi pi-book"></app-menu-link>
-        <app-menu-link
-            nom="Demo 3"
-            link="/demo/demo3"
-            icon="pi pi-cloud"></app-menu-link>
-        <app-menu-link
-            nom="Demo 4"
-            link="/demo/demo4"
-            icon="pi pi-sun"></app-menu-link>
-        <app-menu-link
-            nom="Chronomètre"
-            link="/exos/chrono"
-            icon="pi pi-stopwatch"></app-menu-link>
+        @for (item of menuItems; track $index) {
+            <app-menu-link 
+                [nom]="item.label" 
+                [link]="item.link" 
+                [icon]="item.icon"></app-menu-link>
+        }
     </ul>
 </nav>
