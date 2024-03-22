@@ -7,8 +7,6 @@ import { KelvinToPipe } from './pipes/kelvin-to.pipe';
 import { TimerPipe } from './pipes/timer.pipe';
 import { RouterModule } from '@angular/router';
 
-
-
 @NgModule({
   declarations: [
     CardComponent,

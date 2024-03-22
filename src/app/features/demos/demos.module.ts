@@ -5,11 +5,14 @@ import { Demo2Component } from './pages/demo2/demo2.component';
 import { Demo3Component } from './pages/demo3/demo3.component';
 import { SharedModule } from '../../shared/shared.module';
 import { RouterModule, Routes } from '@angular/router';
+import { Demo4Component } from './pages/demo4/demo4.component';
+import { FormsModule } from '@angular/forms';
 
 const routes: Routes = [
   { path: 'demo1', component: Demo1Component },
   { path: 'demo2', component: Demo2Component },
   { path: 'demo3', component: Demo3Component },
+  { path: 'demo4', component: Demo4Component },
 ]
 
 @NgModule({
@@ -17,11 +20,13 @@ const routes: Routes = [
     Demo1Component,
     Demo2Component,
     Demo3Component,
+    Demo4Component,
   ],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
     SharedModule,
+    FormsModule,
   ]
 })
 export class DemosModule { }
