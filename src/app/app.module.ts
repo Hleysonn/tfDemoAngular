@@ -16,6 +16,7 @@ import { ChronoComponent } from './pages/chrono/chrono.component';
 import { ButtonModule } from 'primeng/button';
 import { Demo3Component } from './pages/demo3/demo3.component';
 import { KelvinToPipe } from './pipes/kelvin-to.pipe';
+import { TimerPipe } from './pipes/timer.pipe';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { KelvinToPipe } from './pipes/kelvin-to.pipe';
     ChronoComponent,
     Demo3Component,
     KelvinToPipe,
+    TimerPipe,
   ],
   imports: [
     BrowserModule,
