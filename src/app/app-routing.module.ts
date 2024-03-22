@@ -8,9 +8,9 @@ import { Demo3Component } from './pages/demo3/demo3.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'demo1', pathMatch: 'full' },
-  { path: 'demo1', component: Demo1Component  },
-  { path: 'demo2', component: Demo2Component  },
-  { path: 'demo3', component: Demo3Component  },
+  { path: 'demo1', component: Demo1Component },
+  { path: 'demo2', component: Demo2Component },
+  { path: 'demo3', component: Demo3Component },
   { path: 'chrono', component: ChronoComponent },
   { path: '**', component: Page404Component },
 ];

@@ -1,5 +1,4 @@
 import { Component, OnDestroy } from '@angular/core';
-import { timer } from '../../pipes/timer.pipe';
 
 @Component({
   selector: 'app-chrono',
