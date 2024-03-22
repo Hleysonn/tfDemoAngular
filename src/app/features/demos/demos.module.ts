@@ -26,6 +26,7 @@ const routes: Routes = [
     CommonModule,
     RouterModule.forChild(routes),
     SharedModule,
+    // nécessaire pour utiliser [(ngModel)]
     FormsModule,
   ]
 })
