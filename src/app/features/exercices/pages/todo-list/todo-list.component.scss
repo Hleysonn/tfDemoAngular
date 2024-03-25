@@ -1,0 +1,12 @@
+p {
+    display: flex;
+    justify-content: space-between;
+}   
+
+.red {
+    color: var(--red-500);
+}
+
+.barre {
+    text-decoration: line-through;
+}
