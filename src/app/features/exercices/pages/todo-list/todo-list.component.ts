@@ -13,6 +13,8 @@ export class TodoListComponent {
 
   tasks: Signal<Task[]>;
 
+  isLoading: boolean = false;
+
   constructor(private taskService: TaskService) {
     this.tasks = taskService.getAll();
   }
@@ -22,10 +24,13 @@ export class TodoListComponent {
       return;
     }
 
+    this.isLoading = true;
     this.taskService.add({
       name: this.taskName,
       important: this.isImportant,
       isComplete: false
+    }).subscribe({
+      next: () => { this.isLoading = false; }
     });
 
     this.taskName = null;
@@ -33,10 +38,22 @@ export class TodoListComponent {
   }
 
   delete(task: Task) {
-    this.taskService.remove(task);
+    this.isLoading = true;
+    this.taskService.remove(task).subscribe({
+      next: () => { this.isLoading = false; }
+    });
   }
 
   check(task: Task) {
-    this.taskService.check(task);
+    if(this.isLoading) {
+      return;
+    }
+    this.isLoading = true;
+    this.taskService.check(task).subscribe({
+      // si la requete à fonctionner
+      next: () => { this.isLoading = false; },
+      // sinon
+      error: () => {}
+    });
   }
 }

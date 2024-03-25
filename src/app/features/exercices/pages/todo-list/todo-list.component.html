@@ -13,7 +13,8 @@
         <p-button [disabled]="!taskName" 
                   (onClick)="add()" 
                   label="Ajouter" 
-                  icon="pi pi-plus"></p-button>
+                  icon="pi pi-plus"
+                  [loading]="isLoading"></p-button>
     </div>
 </p-card>
 
@@ -23,7 +24,7 @@
             <p><span (click)="check(t)" [ngClass]="{ 
                 red: t.important, 
                 barre: t.isComplete 
-            }">{{t.name}}</span> <p-button (onClick)="delete(t)" [outlined]="true" icon="pi pi-trash" severity="danger" size="small"></p-button></p>
+            }">{{t.name}} <i *ngIf="isLoading" class="pi pi-spin pi-spinner"></i></span> <p-button [loading]="isLoading" (onClick)="delete(t)" [outlined]="true" icon="pi pi-trash" severity="danger" size="small"></p-button></p>
             <hr>
         } @empty {
             Pas encore de tâche

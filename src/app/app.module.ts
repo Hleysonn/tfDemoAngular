@@ -10,6 +10,7 @@ import { Page404Component } from './pages/404/404.component';
 import { SharedModule } from './shared/shared.module';
 import { HomeComponent } from './pages/home/home.component';
 import { TaskService } from './features/exercices/services/task.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { TaskService } from './features/exercices/services/task.service';
     BrowserModule,
     AppRoutingModule,
     SharedModule,
+    HttpClientModule,
   ],
   providers: [
     { provide: 'resource1', useValue: 42 },
