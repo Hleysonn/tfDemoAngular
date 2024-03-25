@@ -9,7 +9,6 @@ import { MenuComponent } from './layout/menu/menu.component';
 import { Page404Component } from './pages/404/404.component';
 import { SharedModule } from './shared/shared.module';
 import { HomeComponent } from './pages/home/home.component';
-import { TaskService } from './features/exercices/services/task.service';
 
 @NgModule({
   declarations: [
@@ -26,7 +25,9 @@ import { TaskService } from './features/exercices/services/task.service';
     SharedModule,
   ],
   providers: [
+    // la ressource est partagée dans toute l'application
     { provide: 'resource1', useValue: 42 },
+    // la ressource est partagée depuis le service
     // { provide: TaskService, useClass: TaskService }
     // TaskService
   ],
