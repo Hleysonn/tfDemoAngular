@@ -1,20 +1,28 @@
-import { Component, Signal } from '@angular/core';
+import { Component, OnDestroy, Signal } from '@angular/core';
 import { Task } from '../../models/task.model';
 import { TaskService } from '../../services/task.service';
+import { BehaviorSubject, Observable, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-todo-list',
   templateUrl: './todo-list.component.html',
   styleUrl: './todo-list.component.scss'
 })
-export class TodoListComponent {
+export class TodoListComponent implements OnDestroy {
   taskName: string|null = null;
   isImportant: boolean = false;
 
-  tasks: Signal<Task[]>;
+  tasks!: Task[];
+
+  subscription: Subscription
 
   constructor(private taskService: TaskService) {
-    this.tasks = taskService.getAll();
+    this.subscription = taskService.getAll().subscribe(data => {
+      this.tasks = data;
+    });
+  }
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
   }
 
   add() {

@@ -1,12 +1,13 @@
 import { Injectable, Signal, WritableSignal, signal } from '@angular/core';
 import { Task } from '../models/task.model';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TaskService {
 
-  private tasks: WritableSignal<Task[]> = signal<Task[]>([]);
+  private tasks: BehaviorSubject<Task[]> = new BehaviorSubject<Task[]>([]);
 
   constructor() { }
 
@@ -15,11 +16,11 @@ export class TaskService {
   }
 
   add(task: Task) {
-    this.tasks.update(t => [...t, task]);
+    this.tasks.next([...this.tasks.value, task]);
   } 
 
   remove(task: Task) {
-    this.tasks.update(oldT => oldT.filter(t => t !== task));
+    this.tasks.next(this.tasks.value.filter(t => t !== task));
   }
 
   check(task: Task) {

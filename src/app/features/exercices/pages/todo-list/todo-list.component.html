@@ -19,7 +19,7 @@
 
 <div class="mt-3">
     <p-card>
-        @for(t of tasks();track t) {
+        @for(t of tasks;track t) {
             <p><span (click)="check(t)" [ngClass]="{ 
                 red: t.important, 
                 barre: t.isComplete 
