@@ -9,6 +9,7 @@ import { MenuComponent } from './layout/menu/menu.component';
 import { Page404Component } from './pages/404/404.component';
 import { SharedModule } from './shared/shared.module';
 import { HomeComponent } from './pages/home/home.component';
+import { TaskService } from './features/exercices/services/task.service';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,11 @@ import { HomeComponent } from './pages/home/home.component';
     AppRoutingModule,
     SharedModule,
   ],
-  providers: [],
+  providers: [
+    { provide: 'resource1', useValue: 42 },
+    // { provide: TaskService, useClass: TaskService }
+    // TaskService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -28,6 +28,9 @@ const routes: Routes = [
     SharedModule,
     // nécessaire pour utiliser [(ngModel)]
     FormsModule,
+  ],
+  providers: [
+    { provide: 'resource1', useValue: 44 },
   ]
 })
 export class DemosModule { }

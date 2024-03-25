@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Signal } from '@angular/core';
 import { Task } from '../../models/task.model';
+import { TaskService } from '../../services/task.service';
 
 @Component({
   selector: 'app-todo-list',
@@ -10,28 +11,32 @@ export class TodoListComponent {
   taskName: string|null = null;
   isImportant: boolean = false;
 
-  tasks: Task[] = [];
+  tasks: Signal<Task[]>;
+
+  constructor(private taskService: TaskService) {
+    this.tasks = taskService.getAll();
+  }
 
   add() {
     if(!this.taskName) {
       return;
     }
 
-    this.tasks = [...this.tasks, { 
-      name: this.taskName, 
+    this.taskService.add({
+      name: this.taskName,
       important: this.isImportant,
-      isComplete: false,
-    }]
+      isComplete: false
+    });
 
     this.taskName = null;
     this.isImportant = false;
   }
 
   delete(task: Task) {
-    this.tasks = this.tasks.filter(t => t !== task);
+    this.taskService.remove(task);
   }
 
   check(task: Task) {
-    task.isComplete = true;
+    this.taskService.check(task);
   }
 }
