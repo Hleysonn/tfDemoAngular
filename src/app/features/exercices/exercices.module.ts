@@ -12,11 +12,15 @@ import { FormsModule } from '@angular/forms';
 import { TodoListComponent } from './pages/todo-list/todo-list.component';
 import { InputTextModule } from 'primeng/inputtext';
 import { CheckboxModule } from 'primeng/checkbox';
+import { Ex4Component } from './pages/ex4/ex4.component';
+import { countryResolver } from './resolvers/country.resolver';
+import { isLoggedGuard } from '../../core/guards/is-logged.guard';
 
 const routes: Routes = [
   { path: 'chrono', component: ChronoComponent },
   { path: 'imc', component: ImcComponent },
-  { path: 'todo', component: TodoListComponent },
+  { path: 'todo', component: TodoListComponent, canActivate: [isLoggedGuard] },
+  { path: 'ex4', component: Ex4Component, resolve: { countries: countryResolver } },
 ]
 
 @NgModule({
@@ -24,6 +28,7 @@ const routes: Routes = [
     ChronoComponent,
     ImcComponent,
     TodoListComponent,
+    Ex4Component,
   ],
   imports: [
     CommonModule,

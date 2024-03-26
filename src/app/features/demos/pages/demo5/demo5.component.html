@@ -1,0 +1,61 @@
+<p-card>
+    <form [formGroup]="form" (ngSubmit)="save()">
+        <div class="mb-5">
+            <p-floatLabel>
+                <input formControlName="name" pInputText type="text" >
+                <label>Nom</label>
+                <app-form-error [control]="form.controls['name']"></app-form-error>
+            </p-floatLabel>
+        </div>
+        <div class="mb-5">
+            <p-floatLabel>
+                <input formControlName="surName" pInputText type="text" >
+                <label>Prenom</label>
+                <app-form-error [control]="form.controls['surName']"></app-form-error>
+            </p-floatLabel>
+        </div>
+        <div class="mb-5">
+            <p-floatLabel>
+                <input formControlName="birthDate" pInputText type="date" >
+                <label>Date de naissance</label>
+                <app-form-error [control]="form.controls['birthDate']"></app-form-error>
+            </p-floatLabel>
+        </div>
+        <div class="mb-5">
+            <p-floatLabel>
+                <p-dropdown [options]="['BE', 'KH']" formControlName="nationality"></p-dropdown>
+                <label>Nationality</label>
+                <app-form-error [control]="form.controls['nationality']"></app-form-error>
+            </p-floatLabel>
+        </div>
+        <div class="mb-5">
+            <p-floatLabel>
+                <input formControlName="ssn" pInputText type="text" >
+                <label>SSN</label>
+                <app-form-error [control]="form.controls['ssn']"></app-form-error>
+            </p-floatLabel>
+        </div>
+        <div class="mb-5">
+            <p-floatLabel>
+                <p-dropdown formControlName="departement"></p-dropdown>
+                <label>Departement</label>
+                <app-form-error [control]="form.controls['departement']"></app-form-error>
+            </p-floatLabel>
+        </div>
+        <div class="mb-5">
+            <p-floatLabel>
+                <p-dropdown formControlName="job"></p-dropdown>
+                <label>Job</label>
+                <app-form-error [control]="form.controls['job']"></app-form-error>
+            </p-floatLabel>
+        </div>
+        <div class="mb-5">
+            <label>Etes vous tatoué(e)</label>
+            <p-checkbox formControlName="tattooed" [binary]="true"></p-checkbox>
+            <app-form-error [control]="form.controls['tattooed']"></app-form-error>
+        </div>
+        <div class="mb-5">
+            <p-button [disabled]="form.invalid" type="submit">Sauver</p-button>
+        </div>
+    </form>
+</p-card>

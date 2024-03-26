@@ -1,0 +1,23 @@
+<p-card>
+
+    <div class="mb-3">
+        <p-floatLabel>
+            <input [(ngModel)]="name" pInputText>
+            <label>Prénom</label>
+        </p-floatLabel>
+    </div>
+    <div class="mb-3">
+        <select [(ngModel)]="country_id">
+            @for (item of countries; track $index) {
+                <option [value]="item.cca2">{{item.translations.fra.common}}</option>
+            }
+        </select>
+    </div>
+
+    <div>
+        <p-button [disabled]="!name" (onClick)="search()" icon="pi pi-search" label="Chercher"></p-button>
+    </div>
+
+</p-card>
+
+<p *ngIf="values">Votre age probable est {{values.age}} ans et votre genre est {{values.genre}}</p>

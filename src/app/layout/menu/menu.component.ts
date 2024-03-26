@@ -12,8 +12,10 @@ export class MenuComponent {
     { label: 'Demo 2', icon: 'pi pi-sun', link: '/demo/demo2' },
     { label: 'Demo 3', icon: 'pi pi-moon', link: '/demo/demo3' },
     { label: 'Demo 4', icon: 'pi pi-heart', link: '/demo/demo4' },
+    { label: 'Demo 5', icon: 'pi pi-cog', link: '/demo/demo5' },
     { label: 'Chronomètre', icon: 'pi pi-stopwatch', link: '/exos/chrono' },
     { label: 'IMC', icon: 'pi pi-chart-bar', link: '/exos/imc' },
     { label: 'Liste des tâches', icon: 'pi pi-list', link: '/exos/todo' },
+    { label: 'Exercice 4', icon: 'pi pi-github', link: '/exos/ex4' },
   ];
 }

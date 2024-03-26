@@ -1,0 +1,17 @@
+@if(control.dirty) {
+    @if(control.errors) {
+        @if(control.errors['required']) {
+            <small>Ce champ est requis</small>
+        }
+        @if(control.errors['maxlength']) {
+            <small>Ce champ est trop long</small>
+        }
+        @if(control.errors['notAfterToday']) {
+            <small>C'est trop tard !!</small>
+        }
+        @if(control.errors['pattern']) {
+            <small>Patterne invalide !!</small>
+        }
+    }
+}
+

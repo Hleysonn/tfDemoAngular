@@ -6,6 +6,7 @@ import { MenuLinkComponent } from './components/menu-link/menu-link.component';
 import { KelvinToPipe } from './pipes/kelvin-to.pipe';
 import { TimerPipe } from './pipes/timer.pipe';
 import { RouterModule } from '@angular/router';
+import { FormErrorComponent } from './components/form-error/form-error.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { RouterModule } from '@angular/router';
     MenuLinkComponent,
     KelvinToPipe,
     TimerPipe,
+    FormErrorComponent,
   ],
   imports: [
     CommonModule,
@@ -25,6 +27,7 @@ import { RouterModule } from '@angular/router';
     MenuLinkComponent,
     KelvinToPipe,
     TimerPipe,
+    FormErrorComponent,
   ]
 })
 export class SharedModule { }
